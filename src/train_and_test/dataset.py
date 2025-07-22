@@ -71,20 +71,20 @@ class MalwareHeteroDataset(Dataset):
                 malware_dir = f'{self.root_dir}/{year}/malware/{self.split}'
                 benign_dir = f'{self.root_dir}/{year}/benign/{self.split}'
                 
-                # 加载malware文件 (label=1)
+                # load malware (label=1)
                 if os.path.exists(malware_dir):
                     malware_files = [f for f in os.listdir(malware_dir) if f.endswith('.pt')]
                     for file in malware_files:
                         file_paths.append(os.path.join(malware_dir, file))
                         labels.append(1)
-                # 加载benign文件 (label=0)
+                # load benign (label=0)
                 if os.path.exists(benign_dir):
                     benign_files = [f for f in os.listdir(benign_dir) if f.endswith('.pt')]
                     for file in benign_files:
                         file_paths.append(os.path.join(benign_dir, file))
                         labels.append(0)
                 
-            # 随机打乱数据
+            # shuffle data
             combined = list(zip(file_paths, labels))
             random.shuffle(combined)
             file_paths, labels = zip(*combined)
