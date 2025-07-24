@@ -1094,4 +1094,4 @@ if __name__ == "__main__":
 	main()
 
 	# running example:
-	# python generate_absGraph_V2.py --call_graph_dir ../../Raw/1980/call_graph/malware/graphs --taint_path_dir ../../Raw/1980/taint_path/malware/taint_path_txt/ --permission_dir ../../Raw/1980/permission/malware/permissions/ --output_dir ./Test_0 --label 1 --codebert_embeddings_path ../nodeRepresentation/codebert_api_embeddings.npz --timeout 60 
+	# python generate_absGraph.py --call_graph_dir ../../Raw/2022/call_graph/malware/graphs --taint_path_dir ../../Raw/2022/taint_path/malware/taint_path_txt/ --permission_dir ../../Raw/2022/permission/malware/permissions/ --output_dir ../../Dataset/2022/malware --label 1 --codebert_embeddings_path ../nodeRepresentation/codebert_api_embeddings.npz --timeout 60 

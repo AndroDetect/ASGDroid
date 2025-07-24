@@ -8,8 +8,8 @@ from os.path import basename
 
 def parseargs():
 	parser = argparse.ArgumentParser(description = "Minimum RAM requirement is 4G.")
-	parser.add_argument("-f", "--file", help="A directory with APK(s) to analyze.", type=str, required=True) 
-	parser.add_argument("-d", "--dir", help="The path to your Android platform directory", type=str, required=True)
+	parser.add_argument("-d", "--dir", help="A directory with APK(s) to analyze.", type=str, required=True) 
+	parser.add_argument("-pd", "--platform_dir", help="The path to your Android platform directory", type=str, required=True)
 	args = parser.parse_args()
 	return args
 
@@ -40,25 +40,25 @@ def main():
 	
 	apps = parseargs()
 
-	if os.path.isdir(apps.file):
-		_apk_dir = apps.file.split("/")[-1]
+	if os.path.isdir(apps.dir):
+		_apk_dir = apps.dir.split("/")[-1]
 		if len(_apk_dir) == 0:
-			_apk_dir = apps.file.split("/")[-2]
+			_apk_dir = apps.dir.split("/")[-2]
 
 		print('='*50)
-		print(apps.file)
+		print(apps.dir)
 		
 
-		if apps.file.endswith('/'):
-			_app_dir = _base_dir + "/" + apps.file.split("/")[-3] + "/" + "call_graph" + "/" + _apk_dir
+		if apps.dir.endswith('/'):
+			_app_dir = _base_dir + "/" + apps.dir.split("/")[-3] + "/" + "call_graph" + "/" + _apk_dir
 		else:
 			print('*'*50)
-			print(basename(apps.file))
-			_app_dir = _base_dir + "/" + apps.file.split("/")[-2] + "/" + "call_graph" + "/" + _apk_dir
+			print(basename(apps.dir))
+			_app_dir = _base_dir + "/" + apps.dir.split("/")[-2] + "/" + "call_graph" + "/" + _apk_dir
 		_make_dirs(_app_dir)
 
-		for app in glob.glob(apps.file + "/*.apk"):
-			cmd = "java -Xms4g -Xmx16g -XX:+UseConcMarkSweepGC Appgraph " + app + " " + apps.dir
+		for app in glob.glob(apps.dir + "/*.apk"):
+			cmd = "java -Xms4g -Xmx16g -XX:+UseConcMarkSweepGC Appgraph " + app + " " + apps.platform_dir
 			ran = Popen(shlex.split(cmd))
 			while 1:
 				check = Popen.poll(ran) 

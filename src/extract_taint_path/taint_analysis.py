@@ -117,9 +117,9 @@ class APKProcessor:
 if __name__ == '__main__':
 
 	parser = argparse.ArgumentParser(description='Taint analysis for an given directory.')
-	parser.add_argument("-f", "--file", help="A directory with APK(s) to analyze.", type=str, required=True) 
+	parser.add_argument("-d", "--dir", help="A directory with APK(s) to analyze.", type=str, required=True) 
 
 	args = parser.parse_args()
 
-	processor = APKProcessor(args.file)
+	processor = APKProcessor(args.dir)
 	processor.run()

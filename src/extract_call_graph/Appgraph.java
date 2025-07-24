@@ -21,7 +21,6 @@ public class Appgraph {
 		config.setCodeEliminationMode(InfoflowConfiguration.CodeEliminationMode.NoCodeElimination);
 		config.setEnableReflection(true);
 		config.setCallgraphAlgorithm(InfoflowConfiguration.CallgraphAlgorithm.CHA);
-		config.getAnalysisFileConfig().setSourceSinkFile("../input/flowdroid/SourcesAndSinks.txt");
 		config.getAccessPathConfiguration().setAccessPathLength(1);
 
 		SetupApplication app = new SetupApplication(config);
