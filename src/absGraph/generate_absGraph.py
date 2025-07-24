@@ -1028,7 +1028,7 @@ def main():
 						help='CodeBERT embedding file path')
 	parser.add_argument('--timeout', type=int, default=30, 
 						help='Processing timeout time (seconds)')
-	parser.add_argument('--log_file', type=str, default='asg_dataset.log',
+	parser.add_argument('--log_file', type=str, default='../../Log/asg_dataset.log',
 						help='Log file path')
 	parser.add_argument('--permission_dir', type=str, default='../../Raw/1980/permission',
 						help='Permission files directory path')
