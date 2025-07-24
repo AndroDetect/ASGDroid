@@ -1,0 +1,12 @@
+2025-07-24 12:31:10,266 [INFO] Initializing thread pool with 4 workers
+2025-07-24 12:31:10,273 [INFO] Total tasks generated: 1
+2025-07-24 12:31:10,273 [INFO] Processing [malware]: 25556082fc46b4f686bcd7130348926fccfc95fec7b7cd019c226e7e7af4c1b1.apk
+2025-07-24 12:31:17,145 [INFO] All tasks completed
+2025-07-24 12:32:18,934 [INFO] Initializing thread pool with 4 workers
+2025-07-24 12:32:18,937 [INFO] Total tasks generated: 1
+2025-07-24 12:32:18,938 [INFO] Processing [benign]: 8029e0d62b688b0830e0bd37bc8b122d872ecf982c565df751270f7b6b56bb20.apk
+2025-07-24 12:32:24,476 [INFO] All tasks completed
+2025-07-24 12:56:27,178 [INFO] Initializing thread pool with 4 workers
+2025-07-24 12:56:27,180 [INFO] Total tasks generated: 1
+2025-07-24 12:56:27,228 [INFO] Processing [malware]: 5fb95b18c0ef7c5017c62b55cb7a10e0b11aa9ec2ae76f2801bbdfada119a167.apk
+2025-07-24 12:56:31,711 [INFO] All tasks completed

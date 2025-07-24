@@ -1,0 +1,32 @@
+2025-07-24 13:19:12 - INFO - setup_logging:61 - Logging system initialization completed, log file: ../../Log/asg_dataset.log
+2025-07-24 13:19:12 - INFO - setup_logging:62 - ================================================================================
+2025-07-24 13:19:12 - INFO - setup_logging:63 - ASG Heterogeneous Graph Dataset Generator Started
+2025-07-24 13:19:12 - INFO - setup_logging:64 - ================================================================================
+2025-07-24 13:19:12 - INFO - main:1043 - Program startup parameters: {'mode': 'asg', 'call_graph_dir': '../../Raw/2022/call_graph/malware/graphs', 'taint_path_dir': '../../Raw/2022/taint_path/malware/taint_path_txt/', 'output_dir': '../../Features/2022/malware', 'label': 1, 'codebert_embeddings_path': '../nodeRepresentation/codebert_api_embeddings.npz', 'timeout': 60, 'log_file': '../../Log/asg_dataset.log', 'permission_dir': '../../Raw/2022/permission/malware/permissions/', 'dataset_dirs': None}
+2025-07-24 13:19:12 - INFO - main:1051 - Starting ASG dataset creation mode
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:391 - Starting ASG dataset batch processing
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:392 - Call graph directory: ../../Raw/2022/call_graph/malware/graphs
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:393 - Taint path directory: ../../Raw/2022/taint_path/malware/taint_path_txt/
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:394 - Label: 1 (malware)
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:395 - Output directory: ../../Features/2022/malware
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:396 - Timeout time: 60 seconds
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:397 - CodeBERT embedding file: ../nodeRepresentation/codebert_api_embeddings.npz
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:398 - Permission directory: ../../Raw/2022/permission/malware/permissions/
+2025-07-24 13:19:12 - INFO - batch_process_samples_async:416 - Creating ASGDataset instance
+2025-07-24 13:19:12 - INFO - __init__:598 - Starting ASGDataset initialization
+2025-07-24 13:19:12 - INFO - __init__:599 - Parameters - root: ../../Features/2022/malware, call_graph_dir: ../../Raw/2022/call_graph/malware/graphs, taint_path_dir: ../../Raw/2022/taint_path/malware/taint_path_txt/
+2025-07-24 13:19:12 - INFO - __init__:600 - Parameters - codebert_embeddings_path: ../nodeRepresentation/codebert_api_embeddings.npz
+2025-07-24 13:19:12 - INFO - __init__:610 - Initializing CodeBERT embedding loader
+2025-07-24 13:19:12 - INFO - mp_process_asg_samples:749 - Processing 1 ASG samples using 30 processes (each sample timeout: 60 seconds)
+2025-07-24 13:19:13 - INFO - process_single_sample:348 - sample_id: 5fb95b18c0ef7c5017c62b55cb7a10e0b11aa9ec2ae76f2801bbdfada119a167, {'num_nodes': 29, 'num_call_edges': 33, 'num_taint_edges': 3, 'num_mixed_edges': 1, 'total_edges': 37}
+2025-07-24 13:19:13 - INFO - batch_get_api_embeddings:570 - Batch embedding statistics: Total=29, Found=19, Not found=10, Embeddings to average=10, Finished embeddings=29
+2025-07-24 13:19:13 - INFO - process_asg_sample_wrapper:929 - ASG sample processing successful: 5fb95b18c0ef7c5017c62b55cb7a10e0b11aa9ec2ae76f2801bbdfada119a167
+2025-07-24 13:19:13 - INFO - mp_process_asg_samples:822 - ASG successfully processed 1/1 samples, timeout: 0, time: 0.61 seconds
+2025-07-24 13:19:13 - INFO - __init__:630 - ASGDataset initialization completed:
+2025-07-24 13:19:13 - INFO - __init__:631 -   - Dataset root: ../../Features/2022/malware
+2025-07-24 13:19:13 - INFO - __init__:632 -   - Processed data directory: ../../Features/2022/malware/processed
+2025-07-24 13:19:13 - INFO - __init__:633 -   - Call graph directory: ../../Raw/2022/call_graph/malware/graphs
+2025-07-24 13:19:13 - INFO - __init__:634 -   - Taint path directory: ../../Raw/2022/taint_path/malware/taint_path_txt/
+2025-07-24 13:19:13 - INFO - __init__:635 -   - Label value: 1
+2025-07-24 13:19:13 - INFO - batch_process_samples_async:428 - ASG dataset created successfully, dataset size: 3
+2025-07-24 13:19:13 - INFO - main:1088 - Program execution completed
