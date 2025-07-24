@@ -38,46 +38,44 @@ ASGDroid/
 └── Log/                          # Log files directory
 ```
 
-## Run ASGDroid
+## Main Functional Modules
 
 ### 1. Permission Extraction
 - **Location**: `src/extract_permission/`
 - **Function**: Extract application permission information from Android APK files
-- **Output**: Permission list files
+- **Output**: Permission list files in `Raw/2022/permission`
 
 ### 2. Call Graph Extraction
 - **Location**: `src/extract_call_graph/`
-- **Function**: Analyze APK code structure and generate method call relationship graphs
-- **Tools**: Use Soot framework for static analysis
-- **Output**: Call graph files
+- **Function**: Generate original CG
+- **Output**: Call graph files in `Raw/2022/call_graph`
 
 ### 3. Taint Path Extraction
 - **Location**: `src/extract_taint_path/`
-- **Function**: Perform taint analysis and track data flow paths
-- **Tools**: Use Soot Infoflow for taint analysis
-- **Output**: Taint path XML files
+- **Function**: Perform taint analysis to get taint paths
+- **Output**: Taint path,  XML format in `Raw/2022/taint_path/malware/taint_path_xml`, simplified paths in `Raw/2022/taint_path_malware/taint_path_txt`
 
-### 4. Abstract Semantic Graph Generation
+### 4. ASG Generation
 - **Location**: `src/absGraph/`
-- **Function**: Integrate permission, call graph, and taint path information to generate abstract semantic graphs
-- **Output**: Graph feature files for machine learning model training
+- **Function**: Integrate permission, call graph, and taint path information to generate ASG
+- **Output**: Graph feature files in `Features/2022/malware/processed` for HGNN learning
 
 ## Usage Workflow
 
 ### Extract Permission
 
-python extract_permission.py -d ../../Dataset/2022/malware
+`python extract_permission.py -d ../../Dataset/2022/malware`
 
 ### Extract Call Graph
 
-python extract_call_graphs.py -d ../../Dataset/2022/malware/ -pd ../../Lib/platforms/
+`python extract_call_graphs.py -d ../../Dataset/2022/malware/ -pd ../../Lib/platforms/`
 
 ### Extract Taint Path
 
-python taint_analysis.py -d ../../Dataset/2022/malware/
+`python taint_analysis.py -d ../../Dataset/2022/malware/`
 
-python parseXML.py -tf ../../Raw/2022/taint_path_malware_taint_path_xml/
+`python parseXML.py -tf ../../Raw/2022/taint_path_malware_taint_path_xml/`
 
 ### ASG Generation
 
-python generate_absGraph.py --call_graph_dir ../../Raw/2022/call_graph/malware/graphs --taint_path_dir ../../Raw/2022/taint_path/malware/taint_path_txt/ --permission_dir ../../Raw/2022/permission/malware/permissions/ --output_dir ../../Features/2022/malware --label 1 --codebert_embeddings_path ../nodeRepresentation/codebert_api_embeddings.npz --timeout 60 
+`python generate_absGraph.py --call_graph_dir ../../Raw/2022/call_graph/malware/graphs --taint_path_dir ../../Raw/2022/taint_path/malware/taint_path_txt/ --permission_dir ../../Raw/2022/permission/malware/permissions/ --output_dir ../../Features/2022/malware --label 1 --codebert_embeddings_path ../nodeRepresentation/codebert_api_embeddings.npz --timeout 60`
