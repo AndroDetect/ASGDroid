@@ -38,7 +38,7 @@ ASGDroid/
 └── Log/                          # Log files directory
 ```
 
-## Main Functional Modules
+## Main Functional Modules 
 
 ### 1. Permission Extraction
 - **Location**: `src/extract_permission/`
